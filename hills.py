@@ -39,7 +39,7 @@ def init_hill_summits(hill_index):
     while x < max_x:
         # y = (hill_index + random.random()) * hill_height
         # limit the variation between summits
-        variation = 1 - (hill_index / nb_hills)
+        variation = .1 + (1 - (hill_index / nb_hills)) * .4
         y = bind(prev_y + random.random() * variation * hill_height  , hill_index * hill_height, (hill_index + 1) * hill_height)
         hill_summits.append((x, y))
         x += random.random() * summit_width
